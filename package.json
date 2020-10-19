@@ -1,0 +1,10 @@
+{
+  "name": "Tak_A_Sho_test",
+  "version": "1.0.0",
+  "description": "Test homework for \"Tak A Sho\" company",
+  "main": "index.js",
+  "repository": "https://github.com/kovinchuk/Tak_A_Sho_test",
+  "author": "u.kovinchuk",
+  "license": "MIT",
+  "private": true
+}
