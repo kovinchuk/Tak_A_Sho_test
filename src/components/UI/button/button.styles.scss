@@ -1,0 +1,122 @@
+@import 'lib/styles/base/_config.scss';
+
+[type='button'],
+[type='reset'],
+[type='submit'],
+button {
+  -webkit-appearance: button;
+}
+
+.button {
+  $block: &;
+
+  display: inline-block;
+  margin-top: rem(2);
+  margin-bottom: rem(2);
+  padding: rem(13) rem(32);
+  font-family: $defaults_font;
+  font-weight: $font-weight_regular;
+  font-size: rem(15);
+  line-height: 1.5;
+  letter-spacing: rem(0.6);
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: rem(30);
+  transition: color $defaults_transition-props,
+    opacity $defaults_transition-props,
+    background-color $defaults_transition-props,
+    border-color $defaults_transition-props,
+    box-shadow $defaults_transition-props;
+
+  &:hover {
+    color: #212529;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+  }
+
+  &[type='button']:not(:disabled),
+  &[type='reset']:not(:disabled),
+  &[type='submit']:not(:disabled),
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /***************
+  * THEMES *
+  ****************/
+
+  // Primary
+  &--primary {
+    color: #fff;
+    background-color: $color_primary;
+    border-color: $color_primary;
+
+    &:hover {
+      color: #fff;
+      background-color: #eb3636;
+      border-color: #eb3636;
+    }
+
+    &:focus {
+      color: #fff;
+      background-color: #eb3636;
+      box-shadow: 0 0 0 rem(1) #3a3a3a;
+    }
+
+    &:not(:disabled):not(#{$block}--disabled):active,
+    &:not(:disabled):not(#{$block}--disabled)#{$block}--active {
+      color: #fff;
+      background-color: #f53838;
+      border-color: #f53838;
+    }
+
+    &:disabled {
+      color: #fff;
+      background-color: #f53838;
+      border-color: #f53838;
+    }
+  }
+
+  // Secondary
+  &--secondary {
+    color: $color_text;
+    background-color: #fff;
+    border-color: $color_primary;
+
+    &:hover {
+      color: #fff;
+      background-color: #eb3636;
+      border-color: #eb3636;
+    }
+
+    &:focus {
+      color: #fff;
+      background-color: #eb3636;
+      box-shadow: 0 0 0 rem(2) #3a3a3a;
+    }
+
+    &:not(:disabled):not(#{$block}--disabled):active,
+    &:not(:disabled):not(#{$block}--disabled)#{$block}--active {
+      color: #fff;
+      background-color: #f53838;
+      border-color: #f53838;
+    }
+
+    &:disabled {
+      color: $color_text;
+      background-color: #fff;
+      border-color: $color_primary;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+$font-weight_regular: 400;
+$font-weight_medium: 500;
+$font-weight_semibold: 600;
+$font-weight_bold: 700;
+
+// Font family
+$font_Arial: 'Arial', sans-serif;
+$font_Eina03-SemiBold: 'Eina03-SemiBold', $font_Arial;
+$font_Noto-Sans: 'Noto Sans', $font_Arial;
+
+// colors theme
+$color_primary: #000;
+$color_text: #fff;
+
+// Default
+$browser-context: 16; // Default
+$defaults_font: $font_Noto-Sans;
+$defaults_font-color: $color_text;
+$defaults_font-color-hover: $color_primary;
+$defaults_radius: 4px;
+$defaults_drop-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+$defaults_border: #e4e4e4;
+$defaults_transition-duration: 150ms;
+$defaults_transition: all $defaults_transition-duration ease-in-out;
+$defaults_transition-props: $defaults_transition-duration ease-in-out;
+
+// Z-index
+$z-udr: 2;
+$z-i_dropdown: 1000;
+$z-i_sticky: 1020;
+$z-i_header: 1025;
+$z-i_mobile-menu: $z-i_header - 1;
+$z-i_fixed: 1030;
+$z-i_modal-backdrop: 1040;
+$z-i_modal: 1050;
+$z-i_popover: 1060;
+$z-i_tooltip: 1070;
+
+// Breakpoints
+$break_phone-small-none: 0px;
+$break_phone-small: 480px;
+$break_phone: 768px;
+$break_tablet-small: 1024px;
+$break_tablet: 1280px;
+$break_laptop: 1440px;
+$break_desktop: 1920px;
+
+$break-label_phone-small-none: 'phone-small-none';
+$break-label_phone-small: 'phone-small';
+$break-label_phone: 'phone';
+$break-label_tablet-small: 'tablet-small';
+$break-label_tablet: 'tablet';
+$break-label_laptop: 'laptop';
+$break-label_desktop: 'desktop';

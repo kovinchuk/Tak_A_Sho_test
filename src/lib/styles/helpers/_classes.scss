@@ -1,0 +1,45 @@
+.img-responsive {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  vertical-align: middle;
+}
+.fleft {
+  float: left;
+}
+.fright {
+  float: right;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-nowrap {
+  white-space: nowrap;
+}
+section {
+  position: relative;
+}
+main {
+  position: relative;
+  height: 100%;
+  clear: both;
+}
+header,
+nav,
+section,
+article,
+aside,
+footer,
+main {
+  display: block;
+}

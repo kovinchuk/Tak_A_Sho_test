@@ -1,0 +1,15 @@
+@import '~rupture-sass/rupture';
+@import './variables';
+@import '../helpers/mixins';
+@import '../helpers/animations';
+
+$rupture: (enable-em-breakpoints: false, anti-overlap: -1px);
+
+$rupture: map-merge(
+  $rupture,
+
+  (
+    scale: $break_phone-small-none $break_phone-small $break_phone $break_tablet-small $break_tablet $break_laptop $break_desktop,
+    scale-names: $break-label_phone-small-none $break-label_phone-small $break-label_phone $break-label_tablet-small $break-label_tablet $break-label_laptop $break-label_desktop
+  )
+);

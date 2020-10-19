@@ -1,0 +1,22 @@
+@import 'lib/styles/base/_config.scss';
+
+.header {
+  padding-top: rem(10);
+  color: $color_primary;
+
+  @include above(phone) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__slogan {
+    margin-top: rem(20);
+    margin-bottom: rem(20);
+    font-size: rem(18);
+
+    @include above(phone) {
+      margin-top: rem(25);
+    }
+  }
+}

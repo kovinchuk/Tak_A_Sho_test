@@ -1,0 +1,21 @@
+@import 'lib/styles/base/_config.scss';
+
+.logo {
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__label {
+    display: block;
+    font-family: $font_Eina03-SemiBold;
+    font-weight: $font-weight_regular;
+    font-size: rem(28);
+    color: $color_primary;
+
+    @include above(phone) {
+      font-size: rem(48);
+    }
+  }
+}
