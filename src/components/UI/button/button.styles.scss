@@ -11,20 +11,16 @@ button {
   $block: &;
 
   display: inline-block;
-  margin-top: rem(2);
-  margin-bottom: rem(2);
-  padding: rem(13) rem(32);
   font-family: $defaults_font;
-  font-weight: $font-weight_regular;
-  font-size: rem(15);
-  line-height: 1.5;
-  letter-spacing: rem(0.6);
+  font-weight: $font-weight_medium;
+  font-size: rem(13);
+  line-height: 1.4;
   text-align: center;
   vertical-align: middle;
   user-select: none;
+  white-space: nowrap;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: rem(30);
   transition: color $defaults_transition-props,
     opacity $defaults_transition-props,
     background-color $defaults_transition-props,
@@ -32,7 +28,6 @@ button {
     box-shadow $defaults_transition-props;
 
   &:hover {
-    color: #212529;
     text-decoration: none;
   }
 
@@ -52,9 +47,11 @@ button {
     cursor: pointer;
   }
 
-  /***************
-  * THEMES *
-  ****************/
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem(5);
+  }
 
   // Primary
   &--primary {
@@ -88,35 +85,44 @@ button {
     }
   }
 
-  // Secondary
-  &--secondary {
+  // Transparent
+  &--transparent {
     color: $color_text;
-    background-color: #fff;
-    border-color: $color_primary;
+    background-color: transparent;
+    border-color: transparent;
 
-    &:hover {
-      color: #fff;
-      background-color: #eb3636;
-      border-color: #eb3636;
+    &:hover,
+    &:not(:disabled):not(#{$block}--disabled):active,
+    &:not(:disabled):not(#{$block}--disabled)#{$block}--active {
+      color: $color_text;
+      background-color: transparent;
+      border-color: transparent;
     }
 
     &:focus {
-      color: #fff;
-      background-color: #eb3636;
-      box-shadow: 0 0 0 rem(2) #3a3a3a;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  // Normal
+  &--normal {
+    padding: rem(20) rem(40);
+    border-radius: rem(30);
+  }
+
+  // Small
+  &--small {
+    padding-left: rem(10);
+    padding-right: rem(10);
+    border-radius: rem(25);
+
+    @include above(phone) {
+      padding: rem(14) rem(27);
     }
 
-    &:not(:disabled):not(#{$block}--disabled):active,
-    &:not(:disabled):not(#{$block}--disabled)#{$block}--active {
-      color: #fff;
-      background-color: #f53838;
-      border-color: #f53838;
-    }
-
-    &:disabled {
-      color: $color_text;
-      background-color: #fff;
-      border-color: $color_primary;
+    &:not(#{$block}--transparent) {
+      padding: rem(8) rem(20);
     }
   }
 }

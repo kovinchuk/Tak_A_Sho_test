@@ -61,10 +61,27 @@ body {
 }
 
 .layout {
+  min-width: rem(320);
   max-width: rem(1760);
   margin-left: auto;
   margin-right: auto;
   padding: rem(10);
+
+  @include above(phone) {
+    padding: rem(40) rem(20);
+  }
+  @include above(1280px) {
+    padding-left: rem(40);
+    padding-right: rem(40);
+  }
+  @include above(laptop) {
+    padding-left: rem(80);
+    padding-right: rem(80);
+  }
+  @include above(desktop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .notfound {

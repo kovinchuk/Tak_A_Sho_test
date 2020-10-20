@@ -4,11 +4,6 @@
   position: relative;
   width: 100%;
   flex: 1;
-  padding-top: rem(38);
-  padding-bottom: rem(38);
-
-  @include above(phone) {
-    padding-top: rem(44);
-    padding-bottom: rem(44);
-  }
+  padding-top: rem(20);
+  padding-bottom: rem(20);
 }

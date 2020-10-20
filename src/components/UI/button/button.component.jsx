@@ -7,7 +7,7 @@ import './button.styles.scss';
 
 const propTypes = {
   className: PropTypes.string,
-  theme: PropTypes.oneOf(['primary', 'secondary']),
+  theme: PropTypes.oneOf(['primary', 'transparent']),
   size: PropTypes.oneOf(['small', 'normal']),
   type: PropTypes.oneOf(['button', 'submit']),
 };
