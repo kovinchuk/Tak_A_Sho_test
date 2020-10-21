@@ -1,0 +1,10 @@
+@import 'lib/styles/base/_config.scss';
+
+.stat {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin-right: rem(5);
+  }
+}

@@ -1,0 +1,26 @@
+@import 'lib/styles/base/_config.scss';
+
+.inspiration-cards {
+  display: grid;
+  width: 100%;
+  grid-row-gap: rem(10);
+
+  @include above(620px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: rem(10);
+  }
+  @include above(tablet-small) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include above(laptop) {
+    grid-gap: rem(20);
+  }
+  @include above(desktop) {
+    grid-gap: rem(40);
+  }
+
+  &__message {
+    font-size: rem(22);
+    color: $color_primary;
+  }
+}

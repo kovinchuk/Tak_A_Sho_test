@@ -1,14 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const NotFound = () => {
-  return (
-    <div className="notfound">
-      <h1>Oops!</h1>
-      <p>The page you are looking for doesn`t exist</p>
-      <Link to="/">Go Home</Link>
-    </div>
-  );
-};
+// Components
+import { NotFound as NotFoundComponent } from 'components/not-found';
 
-export { NotFound };
+export const NotFound = () => <NotFoundComponent />;

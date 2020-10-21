@@ -1,31 +1,49 @@
 import { produce } from 'immer';
 
 // Types
-import { ideasTypes } from 'types';
+import { inspirationTypes } from 'types';
+
+// Helpers
+import { sortArrayOfObjectsByFields } from 'lib/helpers';
 
 const initialState = {
-  isFetching: false,
-  items: [],
+  isLoading: false,
+  inspirationCards: [],
   error: null,
 };
 
 export const generalReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ideasTypes.FETCH_IDEAS_ITEMS_REQUEST:
+    case inspirationTypes.FETCH_INSPIRATON_CARDS_REQUEST:
       return produce(state, draftState => {
-        draftState.isFetching = true;
+        draftState.isLoading = true;
       });
 
-    case ideasTypes.FETCH_IDEAS_ITEMS_SUCCESS:
+    case inspirationTypes.FETCH_INSPIRATON_CARDS_SUCCESS:
       return produce(state, draftState => {
-        draftState.isFetching = false;
-        draftState.items = action.payload;
+        draftState.isLoading = false;
+        draftState.inspirationCards = action.payload;
       });
 
-    case ideasTypes.FETCH_IDEAS_ITEMS_FAILURE:
+    case inspirationTypes.FETCH_INSPIRATON_CARDS_FAILURE:
       return produce(state, draftState => {
-        draftState.isFetching = false;
+        draftState.isLoading = false;
         draftState.error = action.payload;
+      });
+
+    case inspirationTypes.REMOVE_INSPIRATON_CARD:
+      return produce(state, draftState => {
+        draftState.inspirationCards = draftState.inspirationCards.filter(
+          card => card.id !== action.payload,
+        );
+      });
+
+    case inspirationTypes.SORT_INSPIRATON_CARDS:
+      return produce(state, draftState => {
+        draftState.inspirationCards = sortArrayOfObjectsByFields(
+          draftState.inspirationCards,
+          'title',
+        );
       });
 
     default:
