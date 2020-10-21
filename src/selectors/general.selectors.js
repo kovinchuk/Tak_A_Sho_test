@@ -1,13 +1,12 @@
 import { createSelector } from 'reselect';
 
-const selectedGeneral = state => state.general;
+const selectGeneral = state => state.general;
 
-export const selectedInspirationCardsIsLoading = createSelector(
-  [selectedGeneral],
-  state => state.isLoading,
-);
-
-export const selectedInspirationCards = createSelector(
-  [selectedGeneral],
-  state => state.inspirationCards,
+export const selectInspirationCards = createSelector(
+  [selectGeneral],
+  state => ({
+    inspirationCards: state.inspirationCards,
+    inspirationCardsIsLoading: state.isLoading,
+    inspirationCardsIsError: state.error,
+  }),
 );

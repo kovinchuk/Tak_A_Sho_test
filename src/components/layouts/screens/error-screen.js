@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+// Components
+import { NotFound } from 'components/not-found';
 
 export class ErrorScreen extends React.Component {
   state = {
@@ -19,15 +21,7 @@ export class ErrorScreen extends React.Component {
     const { children } = this.props;
 
     if (errorInfo) {
-      return (
-        <div>
-          <div>
-            <h1>Упс!</h1>
-            <p>Запрашиваемая страница не существует</p>
-            <Link to="/">Вернуться на главную</Link>
-          </div>
-        </div>
-      );
+      return <NotFound />;
     }
     return children;
   }

@@ -17,17 +17,17 @@ const propTypes = {
   inspirationCards: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-const InspirationCards = ({ inspirationCards }) => {
+const InspirationCards = ({ inspirationCards, isError }) => {
   const renderCards = inspirationCard => (
     <InspirationCard key={inspirationCard.id} {...inspirationCard} />
   );
 
   return (
     <div className={prefix}>
-      {inspirationCards.length > 0 ? (
-        inspirationCards.map(renderCards)
-      ) : (
+      {isError || inspirationCards.length === 0 ? (
         <div className={`${prefix}__message`}>Cards not found</div>
+      ) : (
+        inspirationCards.map(renderCards)
       )}
     </div>
   );
